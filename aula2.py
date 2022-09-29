@@ -19,16 +19,22 @@ def burger_exercise(square_side, circle_diameter):
 
 def convert_cartesian_coordenates_to_polar(x,y):
     r = math.sqrt(math.pow(x,2)+math.pow(y,2))
-    angle = math.asin(x/r)
-    return(r,angle)
+    if (x == 0):
+        if(y > 0):
+            return(r,math.pi/2)
+        elif(y < 0):
+            return(r,-math.pi/2)
+        else:
+            return(r,0)
+    else:
+        return(r,math.atan(y/x))
 
 def indice_massa_corporal_calculator(peso,altura):
-    return("O seu indice de massa corporal é: " + str(round(peso/math.pow(altura,2),2)))65
+    return("O seu indice de massa corporal é: " + str(round(peso/math.pow(altura,2),2)))
 
 
 if __name__ == '__main__':
-    #print(convert_cartesian_coordenates_to_polar(1,1))
+    print(convert_cartesian_coordenates_to_polar(-1,1))
     print(burger_exercise(7.62,8.89))
-    peso = float(input("Qual é o seu peso? "))
-    altura = float(input("Qual é a sua altura? "))
-    print(indice_massa_corporal_calculator(peso,altura))
+    print(indice_massa_corporal_calculator(90,1.91))
+    print(convert_cartesian_coordenates_to_polar(0,1))

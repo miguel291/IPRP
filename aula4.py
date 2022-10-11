@@ -18,8 +18,8 @@ def replace_vowels_for_blank_space(word):
     print(new_word)
 
 def print_all_subwordings_n_characters(word, n_characters):
-    """Receives a wording and a integer n and prints out all
-    subwordings of the given wording with n characters"""
+    """Receives a word and a integer n and prints out all
+    subwordings of the given word with n characters"""
     for i in range(len(word) - n_characters + 1):
         print(word[i : i + n_characters])
 

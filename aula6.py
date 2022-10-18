@@ -1,10 +1,14 @@
 """Code made in lesson 6 of IPRP course @UniveristyOfCoimbra."""
 
 import random
+import turtle
 
 
 def print_dumb_pyramid(rows):
     """Prints a dumb pyramid"""
+    """1
+       1 2
+       1 2 3"""
     j = 0
     for i in range(rows):
         j = j + 1
@@ -93,6 +97,50 @@ def check_if_words_are_friends(word1, word2):
         print("The words are not friends")
 
 
+def draw_radioactivity_sign():
+    """Uses the turte module to draw the radioactivity sign"""
+    colors = ["Yellow", "Black", "Blue"]
+    joao = turtle.Turtle()
+    joao.speed(10000000000000)
+    for i in range(1000):
+        if i < 50:
+            joao.color("black")
+        elif i < 340:
+            joao.color(colors[i % 2])
+        else:
+            joao.color("Yellow")
+        joao.forward(1 * i)
+        joao.right(60)
+
+
+def draw_circle_with_turtle(turt, x, y, radius, color):
+    """ "Draws a circle using the turtle module"""
+    turt.width(4)
+    turt.color(color)
+    turt.speed(1000)
+    turt.penup()
+    turt.goto(x, y)
+    turt.forward(radius)
+    turt.right(90)
+    turt.pendown()
+    for i in range(360):
+        turt.forward(0.5)
+        turt.right(1)
+    turt.hideturtle()
+
+
+def draw_nautilus_with_turtle(turt, radius):
+    """ "Draws a nautilus using the turtle module"""
+    turt.speed(1000)
+    turt.penup()
+    turt.left(radius)
+    turt.pendown()
+    for i in range(4):
+        turt.forward(radius * 4)
+        turt.right(90)
+    turt.hideturtle()
+
+
 if __name__ == "__main__":
     # print_dumb_pyramid(5)
     # print("-------------------")
@@ -103,5 +151,14 @@ if __name__ == "__main__":
     # calculate_natural_logarithm(1000)
     # throw_die_and_calculate_percentage_of_even_throws(10)
     # replace_while_with_for_cycle()
-    check_if_words_are_friends("ola", "adeus")
-    check_if_words_are_friends("qwertyaeiou", "qwertzaeiou")
+    # check_if_words_are_friends("ola", "adeus")
+    # check_if_words_are_friends("qwertyaeiou", "qwertzaeiou")
+    # draw_circle_with_turtle(turtle.Turtle(),0,0,3,"Black")
+    # draw_circle_with_turtle(turtle.Turtle(),-60,0,3,"Blue")
+    # draw_circle_with_turtle(turtle.Turtle(),60,0,3,"Red")
+    # draw_circle_with_turtle(turtle.Turtle(),-30,-25,3,"Yellow")
+    # draw_circle_with_turtle(turtle.Turtle(),30,-25,3,"Green")
+    joao = turtle.Turtle()
+    for i in range(20):
+        draw_nautilus_with_turtle(joao, i)
+    turtle.done()

@@ -37,7 +37,7 @@ def draw_radioactivity_sign(turt):
 
 
 if __name__ == "__main__":
-    joao = turtle.t()
+    joao = turtle.Turtle()
     joao.speed(10)
     # draw_smile(joao, 200, 40)
     draw_radioactivity_sign(joao)
